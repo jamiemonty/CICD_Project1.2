@@ -4,9 +4,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
+
 @RestController
 @RequestMapping("/api/experience-level")
 public class ExperienceLevelController {
@@ -30,3 +32,4 @@ public class ExperienceLevelController {
         return experienceLevel.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
+

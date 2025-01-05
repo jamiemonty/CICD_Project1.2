@@ -16,11 +16,14 @@ public class ExperienceLevel {
     @Column(name = "level") // Assuming level is the name of the column
     private String level;
 
+    private Double multiplier;
+
     public ExperienceLevel() {}
 
-    public ExperienceLevel(Long id, String level) {
+    public ExperienceLevel(Long id, String level, Double multiplier) {
         this.expId = id;
         this.level = level;
+        this.multiplier = multiplier;
     }
 
     public Long getId() {
@@ -37,5 +40,11 @@ public class ExperienceLevel {
 
     public void setLevel(String level) {
         this.level = level;
+    }
+
+    public Double getMultiplier() {return multiplier;}
+
+    public void setMultiplier(Double multiplier) {
+        this.multiplier = multiplier;
     }
 }
