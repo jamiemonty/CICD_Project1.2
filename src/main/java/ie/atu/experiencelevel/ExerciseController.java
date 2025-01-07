@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/exercise")
+@RequestMapping("/api")
 public class ExerciseController {
 
     private final ExerciseService exerciseService;
@@ -19,7 +19,7 @@ public class ExerciseController {
     }
 
     // Calculate exercise weights for a specific experience level
-    @GetMapping("/calculate-weights/{expId}")
+    @GetMapping("/exercise/calculate-weights/{expId}")
     public ResponseEntity<Map<String, Double>> calculateWeights(@PathVariable Long expId) {
         try {
             Map<String, Double> exerciseWeights = exerciseService.calculateExerciseWeights(expId);
